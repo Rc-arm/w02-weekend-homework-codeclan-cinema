@@ -46,14 +46,11 @@ class Customer
     return result
   end
 
-  # display all the movies a particular star is cast in
-  #
-  # def movies()
-  #   sql = "SELECT movies.* FROM movies INNER JOIN castings ON movies.id = castings.movie_id WHERE star_id = $1"
-  #   values = [@id]
-  #   movie_data = SqlRunner.run(sql, values)
-  #   return Movie.map_items(movie_data)
-  # end
-  #
+  def films()
+    sql = "SELECT films.* FROM films INNER JOIN tickets ON films.id = tickets.film_id WHERE customer_id = $1"
+    values = [@id]
+    film_data = SqlRunner.run(sql, values)
+    return Film.map_items(film_data)
+  end
 
 end

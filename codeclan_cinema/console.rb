@@ -31,7 +31,7 @@ Film.delete_all()
   film3.save()
 
   film4 = Film.new({
-    'title' => 'Alien Ressurection',
+    'title' => 'Alien Resurrection',
     'price' => 6
   })
 
@@ -101,8 +101,5 @@ Film.delete_all()
   ticket12.save()
 
   binding.pry
-  Customer.all()
-  Film.all()
-  Ticket.all()
 
   nil
