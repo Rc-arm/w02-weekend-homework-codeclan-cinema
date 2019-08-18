@@ -101,4 +101,8 @@ Film.delete_all()
   ticket12.save()
 
   binding.pry
+  Customer.all()
+  Film.all()
+  Ticket.all()
+
   nil

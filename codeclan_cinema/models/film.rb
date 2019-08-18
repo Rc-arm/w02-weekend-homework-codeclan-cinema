@@ -29,6 +29,22 @@ class Film
     SqlRunner.run(sql, values)
   end
 
+  def self.delete_all()
+    sql = "DELETE FROM films"
+    SqlRunner.run(sql)
+  end
+
+  def self.all()
+    sql = "SELECT * FROM films"
+    film_data = SqlRunner.run(sql)
+    return Film.map_items(film_data)
+  end
+
+  def self.map_items(data)
+    result = data.map{|film| Film.new(film)}
+    return result
+  end
+
   # display all the stars for a particular movie
 
   # def stars()
@@ -54,20 +70,5 @@ class Film
   #   return @budget - combined_fees
   # end
   #
-  # def self.all()
-  #   sql = "SELECT * FROM movies"
-  #   movie_data = SqlRunner.run(sql)
-  #   return Movie.map_items(movie_data)
-  # end
-
-  def self.delete_all()
-    sql = "DELETE FROM films"
-    SqlRunner.run(sql)
-  end
-
-  # def self.map_items(data)
-  #   result = data.map{|movie| Movie.new(movie)}
-  #   return result
-  # end
 
 end
