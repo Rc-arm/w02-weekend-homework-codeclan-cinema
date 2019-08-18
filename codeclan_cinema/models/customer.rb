@@ -44,12 +44,12 @@ class Customer
   #   star_data = SqlRunner.run(sql)
   #   return Star.map_items(star_data)
   # end
-  #
-  # def self.delete_all()
-  #   sql = "DELETE FROM stars"
-  #   SqlRunner.run(sql)
-  # end
-  #
+
+  def self.delete_all()
+    sql = "DELETE FROM customers"
+    SqlRunner.run(sql)
+  end
+
   # def self.map_items(data)
   #   result = data.map{|star| Star.new(star)}
   #   return result

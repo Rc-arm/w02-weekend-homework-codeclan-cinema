@@ -59,12 +59,12 @@ class Film
   #   movie_data = SqlRunner.run(sql)
   #   return Movie.map_items(movie_data)
   # end
-  #
-  # def self.delete_all()
-  #   sql = "DELETE FROM movies"
-  #   SqlRunner.run(sql)
-  # end
-  #
+
+  def self.delete_all()
+    sql = "DELETE FROM films"
+    SqlRunner.run(sql)
+  end
+
   # def self.map_items(data)
   #   result = data.map{|movie| Movie.new(movie)}
   #   return result
